@@ -32,10 +32,8 @@ sch_start_date : Date;
 sch_end_date : Date;
 impl_date : Date;
 it_review_status : Association to CRIT_Review_Statuses;
-@UI.MultiLineText : true
 impl_notes: String; 
 cab_approved_date : Date;
-@UI.MultiLineText : true
 cab_comments: String;
 remarks: String;
 }
@@ -116,10 +114,9 @@ entity Impacts : CodeList{
 }
 
 entity CRStatuses : CodeList{
-key code : String enum{
-Initial = 'I';
-Pending_Approval = 'P'
-}}
+key code : String(1);
+    descr : String(100);
+}
 
 entity CRCategories : CodeList{
 key code : String enum{

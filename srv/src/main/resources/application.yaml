@@ -4,3 +4,9 @@ spring:
   web.resources.static-locations: file:./app/
 cds:
   data-source.auto-config.enabled: false
+  security:
+    mock.users:
+      alice:
+        roles: [ admin]
+
+

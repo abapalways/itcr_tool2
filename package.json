@@ -8,6 +8,9 @@
     "@sap/cds-dk": "^8.8.0"
   },
   "sapux": [
-    "app/project1"
+    "app/project1",
+    "app/project2",
+    "app/project2",
+    "app/crtstatus-fiori"
   ]
 }
