@@ -21,7 +21,7 @@ public class AdminServiceHandler implements EventHandler {
 //    @Before(event = { "CREATE", "UPDATE" }, entity = "AdminService.ChangeRequests")
 //    public class AdminServiceHandler implements EventHandler {
         @Before(event = "DRAFT_NEW", entity = "*")
-    public void readBooks(EventContext context, ChangeRequests changeRequests) { 
+    public void createDraftCR(EventContext context, ChangeRequests changeRequests) { 
       LocalDate currenDate = LocalDate.now();
         String userName = context.getUserInfo().getId();
         // Access the entity data
@@ -29,7 +29,7 @@ public class AdminServiceHandler implements EventHandler {
         
         // Modify a field
        // myEntity.setReqname(userName);
-       changeRequests.setStatusCode( "X");
+       changeRequests.setStatusCode( "1");
        changeRequests.setReqname(userName);
        changeRequests.setChangeTypeCode("X");
        changeRequests.setItBoardApproverCode("X");

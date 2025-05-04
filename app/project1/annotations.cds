@@ -1,4 +1,6 @@
 using AdminService as service from '../../srv/AdminService';
+using from '../../db/schema';
+
 annotate service.ChangeRequests with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
@@ -621,5 +623,29 @@ annotate service.ChangeRequests with {
 
 annotate service.ChangeRequests with {
     impl_notes @UI.MultiLineText : true
+};
+
+annotate service.ChangeRequests with {
+    status @(Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'CRStatuses',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : status_code,
+                    ValueListProperty : 'code',
+                },
+                {
+                    $Type : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'name',
+                },
+            ],
+        },
+        Common.ValueListWithFixedValues : true,
+        Common.FieldControl : #ReadOnly,
+        )};
+
+annotate service.CRStatuses with {
+    code @Common.Text : name
 };
 

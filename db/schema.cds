@@ -2,7 +2,7 @@ namespace cep.itsm.changerequests;
 
 using {cuid,managed,sap.common.CodeList} from '@sap/cds/common';
 
-entity ChangeRequests : cuid,managed {
+entity ChangeRequests : cuid,managed{
 status  : Association to CRStatuses;
 category  : Association to CRCategories;
 reqname   : String(100);
