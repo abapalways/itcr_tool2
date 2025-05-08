@@ -5,6 +5,11 @@ annotate service.ChangeRequests with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
         Data : [
+            { $Type: 'UI.DataFieldForAction', 
+            Action: 'AdminService.EntityContainer/submitcr',
+            Label: 'Submit CR'
+            },
+
             {
                 $Type : 'UI.DataField',
                 Label : 'Change Request Status',

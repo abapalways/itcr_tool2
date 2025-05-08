@@ -2,18 +2,17 @@ package customer.itcr_tool2.handlers;
 
 import java.time.LocalDate;
 
-import org.springframework.jca.support.LocalConnectionFactoryBean;
+
 import org.springframework.stereotype.Component;
 
 import com.sap.cds.services.EventContext;
 import com.sap.cds.services.handler.EventHandler;
 import com.sap.cds.services.handler.annotations.Before;
-
+import com.sap.cds.services.handler.annotations.On;
 import com.sap.cds.services.handler.annotations.ServiceName;
 
+
 import cds.gen.cep.itsm.changerequests.ChangeRequests;
-
-
 
 @Component
 @ServiceName("AdminService")
@@ -48,8 +47,11 @@ public class AdminServiceHandler implements EventHandler {
        changeRequests.setBackoutPlan("X");
        changeRequests.setPostPlan("X");
 
-
-
+    }
+    @On(event = "submitcr")
+    public void submitcr( )
+    {
+      
 
 
     }
